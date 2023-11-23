@@ -10,6 +10,10 @@ def pulse(pin, high_time, low_time):
     Maak de pin pin hoog, wacht high_time,
     maak de pin laag, en wacht nog low_time
     """
+    pin.value(1)
+    time.sleep(high_time)
+    pin.value(0)
+    time.sleep(low_time)
 
     # Kopier hier je implementatie van pulse
 
@@ -25,5 +29,12 @@ def morse(pin, dot_length, text):
 
     # implementeer deze functie
 
+    for x in text:
+        if x == '.':
+            pulse(pin, dot_length, dot_length * 2)
+        elif x == '-':
+            pulse(pin, dot_length * 3, dot_length * 2)
+        elif x == ' ':
+            pulse(pin, dot_length * 0, dot_length * 6)
 
-morse(gpio_pin, 0.2, ".--. -.-- - .... --- -.")
+morse(gpio_pin, 0.3, ".--. -.-- - .... --- -.")
