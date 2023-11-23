@@ -9,4 +9,4 @@ while True:
         led_pin.value(1)
     else:
         led_pin.value(0)
-    time.sleep(0.1)
+    time.sleep(0.01)
