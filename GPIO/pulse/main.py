@@ -17,4 +17,4 @@ def pulse(pin, high_time, low_time):
 
     # implementeer deze functie
 while True:
-    pulse(gpio_pin, 0.2, 0.2)
+    pulse(gpio_pin, 0.06, 0.06)

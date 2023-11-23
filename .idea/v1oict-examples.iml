@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/blink" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GPIO/Tatatataaa" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GPIO/morse_code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GPIO/morse_text" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GPIO/pulse" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/input/demo" isTestSource="false" />
     </content>
