@@ -27,3 +27,5 @@ while True:
     leds(4, delay)
     leds(8, delay)
     leds(16, delay)
+
+# binair = 10101011 1+2+8+32+128 -> decimaal = 171

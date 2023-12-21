@@ -1,5 +1,7 @@
 from machine import I2C, Pin
 from pico_i2c_lcd import I2cLcd
+from machine import Pin, ADC
+import machine
 
 """
 From the 1602A LCD Datasheet. The I2C 1602 LCD module is a 2 line by 16 character display interfaced to an I2C daughter board.
@@ -16,11 +18,15 @@ Note: Adjust the potentiometer when you do not see any characters on the display
 
 i2c = I2C(0, sda=Pin(8), scl=Pin(9), freq=400000)
 
+sensor = machine.ADC(4)
+temp = sensor.read_u16()
+T = 27 - ((temp / 65536 * 3.3) - 0.706) / 0.001721
+
 I2C_ADDR = i2c.scan()[0]
 lcd = I2cLcd(i2c, I2C_ADDR, 2, 16)
 while True:
     print(I2C_ADDR, "| Hex:", hex(I2C_ADDR))
+    # lcd.move_to(0, 0)
+    # lcd.putstr("I2CAddress:" + hex(I2C_ADDR) + "\n")
     lcd.move_to(0, 0)
-    lcd.putstr("I2CAddress:" + hex(I2C_ADDR) + "\n")
-    lcd.move_to(0, 1)
-    lcd.putstr("LCD 16x2 demo.")
+    lcd.putstr(f"temp: {T}")

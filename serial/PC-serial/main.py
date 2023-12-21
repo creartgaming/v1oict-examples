@@ -15,6 +15,7 @@ from serial.tools import list_ports
 import serial
 
 
+
 def read_serial(port):
     """Read data from serial port and return as string."""
     line = port.read(1000)
@@ -41,7 +42,8 @@ with serial.Serial(port=pico_port, baudrate=115200, bytesize=8, parity='N', stop
 
     try:
         # Request user input
-        commands = ['off', 'on', 'exit']
+        commands = ['off', 'on', 'exit', 'temp']
+        # temp = T = 27 - (V – 0.706) / 0.001721
         while True:
             choice = input("Command? [" + ", ".join(commands) + "] ")
 
@@ -59,9 +61,17 @@ with serial.Serial(port=pico_port, baudrate=115200, bytesize=8, parity='N', stop
                 pico_output = read_serial(serial_port)
                 pico_output = pico_output.replace('\r\n', ' ')
                 print("[PICO] " + pico_output)
+            elif choice == 'temp':
+                data = "2\r"
+                serial_port.write(data.encode())
+                pico_output = read_serial(serial_port)
+                pico_output = pico_output.replace('\r\n', ' ')
+                print("[PICO] " + pico_output)
             elif choice == 'exit':
                 # Exit user input loop
                 break
+            # elif choice == 'temp':
+
             else:
                 print("[WARN] Unknown command.")
 

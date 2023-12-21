@@ -16,6 +16,16 @@
       <sourceFolder url="file://$MODULE_DIR$/GPIO/morse_text" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GPIO/pulse" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/input/demo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/neopixel/demo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/analog/demo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/analog/omgekeerd" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/analog/pulse" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/binair/kitt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/binair/walk" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/neopixel/looplicht" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/neopixel/looplicht_kleur" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/serial/PC-serial" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/serial/pico" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

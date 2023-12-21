@@ -15,6 +15,12 @@ def pulse(pin, high_time, low_time):
     # implementeer deze functie
 
 
+    pin.value(1)
+    time.sleep(high_time)
+    pin.value(0)
+    time.sleep(low_time)
+
 while True:
     adc_value = adc.read_u16()
+    pulse(led, adc_value/65535, adc_value/65535)
     time.sleep(0.01)

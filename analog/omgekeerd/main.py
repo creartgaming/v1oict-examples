@@ -13,7 +13,7 @@ def led_brightness(value):
         Waarde tussen de 0 en 65535
     """
 
-    led.duty_u16(value)
+    led.duty_u16(65535-value)
 
 
 while True:
